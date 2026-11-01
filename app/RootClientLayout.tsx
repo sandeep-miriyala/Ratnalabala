@@ -17,6 +17,7 @@ import type { TeluguFont } from "@/app/types/fonts";
 import { FAB_EDGE, FAB_GAP, FAB_HEIGHT, FAB_Z, fabSx } from "@/lib/floating";
 import NextLink from "next/link";
 import { YuktAIWrapper } from "@yuktishaalaa/yuktai";
+import AskPageClient from "@/app/components/AskPageClient";
 import { initWebMCP, isWebMCPAvailable, searchBhavalamala, TOOL_NAME, type SearchResult } from "@/lib/webmcp";
 
 /* ═══════════════════════════════════════════
@@ -139,7 +140,6 @@ export default function RootClientLayout({ children }: { children: React.ReactNo
       position={yuktaiSide}
       launcher
       showAccessibility
-      showRag
       showAgent
       showPageTools
       voiceLang="te-IN"
@@ -298,6 +298,15 @@ export default function RootClientLayout({ children }: { children: React.ReactNo
       <ChatbotWindow open={chatOpen} onClose={() => setChatOpen(false)} />
 
       <WebMCPPanel open={searchOpen} onClose={closeSearch} side={side} />
+
+      {/* Ask page panel (replaces the old 💬 showRag button): same corner as
+          the yuktai tools, lifted above them */}
+      <AskPageClient
+        side={yuktaiSide}
+        bottom={96}
+        title="ఈ పేజీని అడగండి"
+        questions={[{ text: "ఈ పేజీ సారాంశం" }, { text: "ఈ పద్యం భావం ఏమిటి?", path: "/poems/*" }]}
+      />
     </YuktAIWrapper>
   );
 }
