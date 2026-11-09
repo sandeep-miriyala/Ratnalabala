@@ -300,13 +300,13 @@ export default function RootClientLayout({ children }: { children: React.ReactNo
       <WebMCPPanel open={searchOpen} onClose={closeSearch} side={side} />
 
       {/* Ask page panel (replaces the old 💬 showRag button): same corner as
-          the yuktai tools, lifted above them */}
+          the yuktai tools, lifted above them 
       <AskPageClient
         side={yuktaiSide}
         bottom={96}
         title="ఈ పేజీని అడగండి"
         questions={[{ text: "ఈ పేజీ సారాంశం" }, { text: "ఈ పద్యం భావం ఏమిటి?", path: "/poems/*" }]}
-      />
+      /> */}
     </YuktAIWrapper>
   );
 }
