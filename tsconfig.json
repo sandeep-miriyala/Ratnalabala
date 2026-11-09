@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+<<<<<<< HEAD
     "target": "ES2017",
     "lib": [
       "dom",
@@ -10,6 +11,10 @@
     "types": [
       "@serwist/next/typings"
     ],
+=======
+    "target": "ES2022",
+    "lib": ["dom", "dom.iterable", "esnext"],
+>>>>>>> origin/yuktai
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -21,6 +26,7 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+<<<<<<< HEAD
     "paths": {
       "@/*": [
         "./*"
@@ -44,4 +50,14 @@
     "node_modules",
     "public/sw.js"
   ]
+=======
+    "plugins": [{ "name": "next" }],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@config": ["./yuktai.config.ts"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".next/dev/types/**/*.ts", "**/*.mts"],
+  "exclude": ["node_modules", "rust"]
+>>>>>>> origin/yuktai
 }
