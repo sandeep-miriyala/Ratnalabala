@@ -10,7 +10,7 @@ import {
   CircularProgress,
   Chip,
   Alert,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { AutoAwesomeRounded as AutoAwesomeRoundedIcon } from "@/lib/yuktai-icons";
 type AgentResult = {
   success: boolean;

@@ -5,7 +5,7 @@
    పేజీలోని ఏ భాగాన్ని నొక్కినా ఆ పెట్టె ఎడిటర్‌లో ఎంచుకోబడుతుంది. */
 
 import { useEffect, useRef, useState } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography } from "@yuktishaalaa/yuktai/ui";
 import { hitTest, paintPage, type Layout } from "./engine";
 import type { Project } from "./model";
 

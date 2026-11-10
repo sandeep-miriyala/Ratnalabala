@@ -3,7 +3,7 @@
 /* ఫాంట్ ఎంపిక — ప్రతి పేరు ఆ ఫాంట్‌లోనే; "నా ఫాంట్లు" (సొంత / కంప్యూటర్ ఫాంట్లు) కూడా */
 
 import { useMemo, useState } from "react";
-import { Box, Button, ListSubheader, MenuItem, Select, Stack, Typography } from "@mui/material";
+import { Box, Button, ListSubheader, MenuItem, Select, Stack, Typography } from "@yuktishaalaa/yuktai/ui";
 import { AddRounded as AddRoundedIcon } from "@/lib/yuktai-icons";
 import MyFontsDialog from "@/app/components/MyFontsDialog";
 import { fontStack, loadTeluguFont, useTeluguFonts } from "@/lib/teluguFonts";

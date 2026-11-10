@@ -28,7 +28,7 @@ import {
   alpha,
   useMediaQuery,
   useTheme,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { SmartToyRounded as SmartToyRoundedIcon } from "../../lib/yuktai-icons";
 import { HubRounded as HubRoundedIcon } from "../../lib/yuktai-icons";
 import { ContrastRounded as ContrastRoundedIcon } from "@/lib/yuktai-icons";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { IconButton } from "@mui/material";
+import { IconButton } from "@yuktishaalaa/yuktai/ui";
 import { VolumeUp as VolumeUpIcon } from "@/lib/yuktai-icons";
 import { Pause as PauseIcon } from "@/lib/yuktai-icons";
 

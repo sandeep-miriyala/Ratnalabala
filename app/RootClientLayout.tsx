@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Box, Button, CircularProgress, ClickAwayListener, Fab, IconButton, Stack, TextField, Typography } from "@mui/material";
+import { Box, Button, CircularProgress, ClickAwayListener, Fab, IconButton, Stack, TextField, Typography } from "@yuktishaalaa/yuktai/ui";
 import { CloseRounded as CloseRoundedIcon } from "@/lib/yuktai-icons";
 import { AutoAwesomeRounded as AutoAwesomeRoundedIcon } from "@/lib/yuktai-icons";
 import { TravelExploreRounded as TravelExploreRoundedIcon } from "@/lib/yuktai-icons";
@@ -19,6 +19,7 @@ import NextLink from "next/link";
 import { YuktAIWrapper } from "@yuktishaalaa/yuktai";
 import AskPageClient from "@/app/components/AskPageClient";
 import { initWebMCP, isWebMCPAvailable, searchBhavalamala, TOOL_NAME, type SearchResult } from "@/lib/webmcp";
+import yuktai from "@/yuktai.config";
 
 /* ═══════════════════════════════════════════
    Floating buttons on every page — ONE button, one group
@@ -123,7 +124,7 @@ export default function RootClientLayout({ children }: { children: React.ReactNo
   const align = side === "right" ? "flex-end" : "flex-start";
 
   // Register the WebMCP tool once, for every page. Cleanup unregisters it.
-  useEffect(() => initWebMCP(), []);
+  useEffect(() => (yuktai.features.webmcp ? initWebMCP() : undefined), []);
 
   // Stable function, so the panel's Esc listener isn't re-added on every keystroke
   const closeSearch = useCallback(() => {
@@ -138,12 +139,12 @@ export default function RootClientLayout({ children }: { children: React.ReactNo
   return (
     <YuktAIWrapper
       position={yuktaiSide}
-      launcher
-      showAccessibility
-      showAgent
-      showPageTools
-      voiceLang="te-IN"
-      engine="rust"
+      launcher={yuktai.features.launcher}
+      showAccessibility={yuktai.features.accessibility}
+      showAgent={yuktai.features.agent}
+      showPageTools={yuktai.features.pageTools}
+      voiceLang={yuktai.voiceLang}
+      engine={yuktai.engine}
     >
       <Navbar />
 
@@ -299,14 +300,11 @@ export default function RootClientLayout({ children }: { children: React.ReactNo
 
       <WebMCPPanel open={searchOpen} onClose={closeSearch} side={side} />
 
-      {/* Ask page panel (replaces the old 💬 showRag button): same corner as
-          the yuktai tools, lifted above them 
-      <AskPageClient
-        side={yuktaiSide}
-        bottom={96}
-        title="ఈ పేజీని అడగండి"
-        questions={[{ text: "ఈ పేజీ సారాంశం" }, { text: "ఈ పద్యం భావం ఏమిటి?", path: "/poems/*" }]}
-      /> */}
+      {/* Ask page panel: same corner as the yuktai tools, lifted above them.
+          On or off in yuktai.config.ts (features.ask). */}
+      {yuktai.features.ask && (
+        <AskPageClient side={yuktaiSide} bottom={96} title={yuktai.ask.title} questions={yuktai.ask.questions} />
+      )}
     </YuktAIWrapper>
   );
 }

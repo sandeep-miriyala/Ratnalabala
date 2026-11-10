@@ -11,7 +11,7 @@ import {
   Stack,
   Chip,
   Divider,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import GeetaListByChapter from "@/app/components/GeetaListByChapter";
 
 import {

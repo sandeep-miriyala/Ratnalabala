@@ -21,7 +21,7 @@
    ═══════════════════════════════════════════════════════════════ */
 
 import { useEffect, useState } from "react";
-import { Box, GlobalStyles } from "@mui/material";
+import { Box, GlobalStyles } from "@yuktishaalaa/yuktai/ui";
 
 const BAR = 44; // px — one line (tablet / computer)
 const BAR_PHONE = 60; // px — two lines on phones (all three items don't fit on one)

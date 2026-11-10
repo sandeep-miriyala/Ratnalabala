@@ -12,7 +12,7 @@ import {
   Divider,
   Paper,
   InputLabel,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { ChatBubbleOutlineRounded as ChatBubbleOutlineRoundedIcon } from "@/lib/yuktai-icons";
 
 import SametaluList from "@/app/components/SametaluList";

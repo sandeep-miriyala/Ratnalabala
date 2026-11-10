@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { IconButton, Tooltip } from "@mui/material";
+import { IconButton, Tooltip } from "@yuktishaalaa/yuktai/ui";
 import { FavoriteRounded as FavoriteRoundedIcon } from "../../lib/yuktai-icons";
 import { FavoriteBorderRounded as FavoriteBorderRoundedIcon } from "../../lib/yuktai-icons";
 import {

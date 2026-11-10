@@ -1,0 +1,32 @@
+﻿Ratnalabala Import Check
+
+All listed import targets were found.
+
+Components:
+- StoryListByAge.tsx
+- TeluguDataGrid.tsx
+- TeluguNewsReader.tsx
+- TeluguocrPage.tsx
+- YuktaiGridView.tsx
+- exportPoems.tsx
+- khatimala components
+
+Types:
+- app/types/kathamala.ts
+- app/types/sametalu.ts
+- app/types/fonts.ts
+
+Data:
+- data/Pingali_Seethamama.json
+- data/bhashaMala.ts
+- data/kids_stories_te.json
+
+Libraries:
+- lib/floating.ts
+- lib/myReading.ts
+- lib/processFile.ts
+- lib/teluguFonts.ts
+- lib/webmcp.ts
+
+Conclusion:
+All listed import targets exist. The remaining build issue needs investigation of TypeScript path aliases and Next.js module resolution.

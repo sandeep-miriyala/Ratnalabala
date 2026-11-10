@@ -24,7 +24,7 @@ import {
   Stack,
   Typography,
   useMediaQuery,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { CloseRounded as CloseRoundedIcon } from "@/lib/yuktai-icons";
 import { UploadFileRounded as UploadFileRoundedIcon } from "../../lib/yuktai-icons";
 import { ComputerRounded as ComputerRoundedIcon } from "../../lib/yuktai-icons";

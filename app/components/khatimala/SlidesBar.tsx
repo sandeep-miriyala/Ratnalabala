@@ -17,7 +17,7 @@ import {
   Stack,
   Tooltip,
   Typography,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { AddRounded as AddRoundedIcon } from "@/lib/yuktai-icons";
 import { RemoveRounded as RemoveRoundedIcon } from "@/lib/yuktai-icons";
 import { ContentCopyRounded as ContentCopyRoundedIcon } from "@/lib/yuktai-icons";

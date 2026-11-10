@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Box,Typography } from "@mui/material";
+import { Box,Typography } from "@yuktishaalaa/yuktai/ui";
 import Swaramala from "@/app/components/swaramala";
 
 

@@ -9,7 +9,7 @@ import {
   CardContent,
   Divider,
   IconButton,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { VolumeUp as VolumeUpIcon } from "@/lib/yuktai-icons";
 import { StopCircle as StopCircleIcon } from "@/lib/yuktai-icons";
 

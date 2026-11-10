@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Box, Typography, Fade, Collapse } from "@mui/material";
+import { Box, Typography, Fade, Collapse } from "@yuktishaalaa/yuktai/ui";
 import { Bolt as BoltIcon } from "@/lib/yuktai-icons";
 
 export default function PageLoadTime() {

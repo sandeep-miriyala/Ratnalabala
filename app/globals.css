@@ -7,7 +7,7 @@
    • 320px ఫోన్ నుంచి 4K తెర వరకు — పక్కకు జరపనక్కర్లేదు (1.4.10)
    • అక్షర అంతరం 1.5× పెంచినా ఏదీ కత్తిరించబడదు (1.4.12) — స్థిర ఎత్తులు లేవు
    • Inline styles వద్దు: components లో className="rb-…" మాత్రమే
-   • Icons: @mui/icons-material ఒక్కటే (Tailwind లేదు)
+   • Components: YuktAI UI (@yuktishaalaa/yuktai/ui) · Icons: YuktAI icons ఒక్కటే (Tailwind లేదు)
    • Fonts ఇక్కడ లేవు — main.py నుంచి lib/teluguFonts.ts లోడ్ చేస్తుంది
 
    విభాగాలు (VS Code: Ctrl+F → "§3" లాగా)

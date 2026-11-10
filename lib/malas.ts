@@ -6,7 +6,7 @@
    tone: "maroon" | "gold" | "ink" — globals.css లోని .is-maroon / .is-gold / .is-ink
    ═══════════════════════════════════════════════════════════════ */
 
-import type { SvgIconComponent } from "@mui/icons-material";
+import type { SvgIconComponent } from "@yuktishaalaa/yuktai/ui";
 import { SpellcheckTwoTone as SpellcheckTwoToneIcon } from "./yuktai-icons";
 import { MenuBookTwoTone as MenuBookTwoToneIcon } from "@/lib/yuktai-icons";
 import { PaletteTwoTone as PaletteTwoToneIcon } from "@/lib/yuktai-icons";

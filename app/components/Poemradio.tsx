@@ -15,7 +15,7 @@ import {
   Slider,
   Stack,
   Typography,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { PlayArrowRounded as PlayArrowRoundedIcon } from "@/lib/yuktai-icons";
 import { PauseRounded as PauseRoundedIcon } from "@/lib/yuktai-icons";
 import { SkipNextRounded as SkipNextRoundedIcon } from "@/lib/yuktai-icons";

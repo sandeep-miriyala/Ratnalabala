@@ -1,0 +1,321 @@
+"use client";
+
+import React, { useEffect, useMemo, useState } from "react";
+import {
+  Box,
+  Typography,
+  TextField,
+  Button,
+  Pagination,
+  Stack,
+  Collapse,
+  CircularProgress,
+  IconButton,
+  InputAdornment,
+} from "@mui/material";
+import { ClearRounded as ClearRoundedIcon } from "@/lib/yuktai-icons";
+import { ExpandMoreRounded as ExpandMoreRoundedIcon } from "@/lib/yuktai-icons";
+import { ExpandLessRounded as ExpandLessRoundedIcon } from "@/lib/yuktai-icons";
+import { DownloadForOfflineRounded as DownloadForOfflineRoundedIcon } from "@/lib/yuktai-icons";
+import { SearchOffRounded as SearchOffRoundedIcon } from "../../lib/yuktai-icons";
+
+import GeetaCard from "@/app/components/GeetaCard";
+import { GEETA_CHAPTERS } from "@/types/geeta";
+import DownloadAllPosters from "@/app/components/DownloadAllPosters";
+import DownloadAllVoices from "@/app/components/DownloadAllVoices";
+import PoemRadio from "@/app/components/Poemradio";
+import DownloadAllVideos from "@/app/components/DownloadAllVideos";
+
+interface Poem {
+  title: string;
+  content: string;
+  slug?: string;
+}
+
+interface GeetaVerseItem {
+  verse: number;
+  sloka: string;
+  meaning: string;
+  chapterLabel: string;
+  slug: string;
+  // Extra fields the live API returns that the old static JSON didn't have.
+  // Optional so nothing breaks if a chapter/verse is missing one.
+  w2wMeaning?: string;
+  commentary?: string;
+  audio?: string;
+}
+
+// Shape returned by the Python Gita query endpoint.
+// (each item in the "all" array has this same shape).
+interface GeetaVerseRaw {
+  verse: number;
+  sloka: string;
+  meaning: string;
+  w2wMeaning?: string;
+  commentary?: string;
+  audio?: string;
+}
+
+interface GeetaChapterJson {
+  chapter: number;
+  chapterName: string;
+  totalVerses: number;
+  verses: GeetaVerseRaw[];
+}
+
+interface Props {
+  chapter: number | "all";
+  poetryName: string;
+  authors: string | string[];
+}
+
+const ITEMS_PER_PAGE = 5;
+
+// Optional external service override for testing or a separate deployment.
+const GITA_API_BASE =
+  process.env.NEXT_PUBLIC_GITA_API_BASE ?? "";
+const getGitaUrl = (chapter: number | "all") => {
+  const chapterParam = encodeURIComponent(String(chapter));
+  if (GITA_API_BASE) {
+    return `${GITA_API_BASE.replace(/\/$/, "")}/api/gita?chapter=${chapterParam}`;
+  }
+  return `/api/gita?chapter=${chapterParam}`;
+};
+
+const GeetaListByChapter: React.FC<Props> = ({ chapter, poetryName, authors }) => {
+  const [verses, setVerses] = useState<GeetaVerseItem[]>([]);
+  const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [page, setPage] = useState(1);
+  const [viewAll, setViewAll] = useState(false);
+  const [toolsOpen, setToolsOpen] = useState(false);
+
+  const sortVerses = (list: GeetaVerseItem[]) => list.sort((a, b) => a.verse - b.verse);
+
+  // The dataset's sloka/meaning strings sometimes come prefixed with a
+  // verse-reference tag like "BG18.1: " or "BG 18.1 - " baked into the
+  // text itself. Strip that off before it ever reaches GeetaCard, since
+  // the chapter/verse info is already shown separately via chapterLabel.
+  const stripVerseReference = (text: string): string =>
+    text
+      .replace(/^\s*BG\s*\d+[.:]\d+\s*[-:.]?\s*/i, "")
+      .trim();
+
+  /* 📥 Load verses from the live Python endpoint backed by Hugging Face. */
+  useEffect(() => {
+    const fetchVerses = async () => {
+      setLoading(true);
+      setError(null);
+
+      try {
+        if (chapter === "all") {
+          const res = await fetch(getGitaUrl("all"));
+          if (!res.ok) throw new Error();
+
+          const allChapters: GeetaChapterJson[] = await res.json();
+
+          const merged: GeetaVerseItem[] = allChapters.flatMap((chapterData) => {
+            const meta = GEETA_CHAPTERS.find((c) => c.key === chapterData.chapter);
+            const label = meta?.label ?? `అధ్యాయం ${chapterData.chapter}`;
+            return chapterData.verses.map((v) => ({
+              verse: v.verse,
+              sloka: stripVerseReference(v.sloka),
+              meaning: stripVerseReference(v.meaning),
+              chapterLabel: `అధ్యాయం ${chapterData.chapter}: ${label}`,
+              slug: `chapter${chapterData.chapter}-verse${v.verse}`,
+              w2wMeaning: v.w2wMeaning ? stripVerseReference(v.w2wMeaning) : v.w2wMeaning,
+              commentary: v.commentary ? stripVerseReference(v.commentary) : v.commentary,
+              audio: v.audio,
+            }));
+          });
+
+          setVerses(sortVerses(merged));
+          return;
+        }
+
+        const res = await fetch(getGitaUrl(chapter));
+        if (!res.ok) throw new Error();
+
+        const data: GeetaChapterJson = await res.json();
+        const items: GeetaVerseItem[] = data.verses.map((v) => ({
+          verse: v.verse,
+          sloka: stripVerseReference(v.sloka),
+          meaning: stripVerseReference(v.meaning),
+          chapterLabel: `అధ్యాయం ${data.chapter}: ${data.chapterName}`,
+          slug: `chapter${data.chapter}-verse${v.verse}`,
+          w2wMeaning: v.w2wMeaning ? stripVerseReference(v.w2wMeaning) : v.w2wMeaning,
+          commentary: v.commentary ? stripVerseReference(v.commentary) : v.commentary,
+          audio: v.audio,
+        }));
+        setVerses(sortVerses(items));
+      } catch {
+        setError("శ్లోకాలను లోడ్ చేయడంలో లోపం వచ్చింది.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchVerses();
+  }, [chapter]);
+
+  /* 🔍 Filter — searches sloka + meaning */
+  const filtered = useMemo(
+    () => verses.filter((v) => v.sloka.includes(search) || v.meaning.includes(search)),
+    [verses, search]
+  );
+
+  const itemsPerPage = viewAll ? filtered.length : ITEMS_PER_PAGE;
+  const totalPages = Math.ceil(filtered.length / itemsPerPage) || 1;
+  const current = filtered.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+
+  const rangeStart = filtered.length === 0 ? 0 : (page - 1) * itemsPerPage + 1;
+  const rangeEnd = Math.min(page * itemsPerPage, filtered.length);
+
+  useEffect(() => {
+    setPage(1);
+  }, [search, viewAll, chapter]);
+
+  const handlePageChange = (_: unknown, val: number) => {
+    setPage(val);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // PoemRadio / DownloadAllPosters / DownloadAllVideos / DownloadAllVoices
+  // all expect the generic Poem{title, content, slug} shape — derived
+  // here from the filtered verses, without changing those components
+  // at all.
+  const poemsForTools: Poem[] = useMemo(
+    () =>
+      filtered.map((v) => ({
+        title: `శ్లోకం ${v.verse}`,
+        content: `${v.sloka}\n\n${v.meaning}`,
+        slug: v.slug,
+      })),
+    [filtered]
+  );
+
+  return (
+    <Box sx={{ p: { xs: 2, sm: 3 }, maxWidth: 900, mx: "auto" }}>
+      <Typography align="center" fontWeight={700} fontSize="1.8rem">
+        {poetryName}
+      </Typography>
+
+      <Typography align="center" sx={{ mb: 2 }} color="text.secondary">
+        మొత్తం శ్లోకాలు: <strong>{filtered.length}</strong>
+      </Typography>
+
+      <TextField
+        label="శ్లోకం కోసం వెతకండి..."
+        fullWidth
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        sx={{ mb: 2 }}
+        slotProps={{
+          input: {
+            endAdornment: search && (
+              <InputAdornment position="end">
+                <IconButton size="small" aria-label="వెతకడం క్లియర్ చేయండి" onClick={() => setSearch("")}>
+                  <ClearRoundedIcon fontSize="small" />
+                </IconButton>
+              </InputAdornment>
+            ),
+          },
+        }}
+      />
+
+      <Box textAlign="center" mb={3}>
+        <Button
+          variant={viewAll ? "outlined" : "contained"}
+          onClick={() => setViewAll((v) => !v)}
+          disabled={loading || filtered.length === 0}
+        >
+          {viewAll ? "పేజీలవారీగా చూడండి" : "అన్ని శ్లోకాలు చూడండి"}
+        </Button>
+      </Box>
+
+      {loading && (
+        <Stack alignItems="center" spacing={1.5} sx={{ py: 6 }}>
+          <CircularProgress size={32} />
+          <Typography color="text.secondary">శ్లోకాలు లోడ్ అవుతున్నాయి…</Typography>
+        </Stack>
+      )}
+
+      {error && (
+        <Typography align="center" color="error" sx={{ py: 4 }}>
+          {error}
+        </Typography>
+      )}
+
+      {!loading && !error && filtered.length === 0 && (
+        <Stack alignItems="center" spacing={1} sx={{ py: 6, opacity: 0.75 }}>
+          <SearchOffRoundedIcon fontSize="large" color="disabled" />
+          <Typography color="text.secondary">&ldquo;{search}&rdquo; కోసం ఏ శ్లోకం దొరకలేదు.</Typography>
+          <Button size="small" onClick={() => setSearch("")}>
+            వెతకడం క్లియర్ చేయండి
+          </Button>
+        </Stack>
+      )}
+
+      {!loading && !error && filtered.length > 0 && <PoemRadio poems={poemsForTools} />}
+
+      {!loading && !error && filtered.length > 0 && (
+        <Box sx={{ mb: 3 }}>
+          <Button
+            onClick={() => setToolsOpen((v) => !v)}
+            variant="outlined"
+            fullWidth
+            startIcon={<DownloadForOfflineRoundedIcon fontSize="small" />}
+            endIcon={toolsOpen ? <ExpandLessRoundedIcon fontSize="small" /> : <ExpandMoreRoundedIcon fontSize="small" />}
+            sx={{ textTransform: "none", fontWeight: 700, borderRadius: "10px" }}
+          >
+            బల్క్ డౌన్‌లోడ్‌లు (పోస్టర్లు · వాయిస్‌లు · వీడియోలు)
+          </Button>
+
+          <Collapse in={toolsOpen} timeout={280} unmountOnExit>
+            <Stack spacing={2} sx={{ mt: 2 }}>
+              <DownloadAllPosters poems={poemsForTools} authors={authors} poetryName={poetryName} />
+              <DownloadAllVideos poems={poemsForTools} />
+              <DownloadAllVoices poems={poemsForTools} />
+            </Stack>
+          </Collapse>
+        </Box>
+      )}
+
+      {/* ── ప్రతి verse ఇప్పుడు GeetaCard తో — sloka + meaning విడివిడిగా,
+          మరియు poetryName కూడా PoemCardNew తో సమానంగా pass చేయబడుతుంది ── */}
+      {!loading &&
+        !error &&
+        current.map((v) => (
+         <GeetaCard
+  key={v.slug}
+  verse={v.verse}
+  sloka={v.sloka}
+  meaning={v.meaning}
+  chapterLabel={chapter === "all" ? v.chapterLabel : undefined}
+  authors={authors}
+  poetryName={poetryName}
+  w2wMeaning={v.w2wMeaning}
+  commentary={v.commentary}
+/>
+        ))}
+
+      {!loading && !error && filtered.length > 0 && (
+        <>
+          {!viewAll && totalPages > 1 && (
+            <>
+              <Typography align="center" variant="body2" color="text.secondary" sx={{ mt: 3 }}>
+                {rangeStart}–{rangeEnd} / {filtered.length} శ్లోకాలు చూపిస్తున్నాం
+              </Typography>
+              <Box display="flex" justifyContent="center" mt={1}>
+                <Pagination count={totalPages} page={page} onChange={handlePageChange} />
+              </Box>
+            </>
+          )}
+        </>
+      )}
+    </Box>
+  );
+};
+
+export default GeetaListByChapter;

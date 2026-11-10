@@ -9,7 +9,7 @@ import {
   ToggleButtonGroup,
   Card,
   CardContent,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 
 /* ===============================
    📘 Language Content (YOUR DATA)

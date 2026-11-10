@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Box, Button, Paper, Stack, Typography } from "@mui/material";
+import { Box, Button, Paper, Stack, Typography } from "@yuktishaalaa/yuktai/ui";
 
 const CONSENT_KEY = "cookie_consent"; // "accepted" | "rejected"
 

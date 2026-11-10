@@ -1,6 +1,6 @@
 "use client";
 
-import { Typography, Box } from "@mui/material";
+import { Typography, Box } from "@yuktishaalaa/yuktai/ui";
 
 export default function VideoPage() {
   return (

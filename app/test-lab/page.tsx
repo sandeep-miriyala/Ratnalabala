@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import {
   Alert, Box, Button, Chip, CircularProgress, LinearProgress,
   Paper, Stack, Typography,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 
 type Result = "సిద్ధం" | "పరీక్షలో ఉంది" | "విజయం" | "విఫలం";
 

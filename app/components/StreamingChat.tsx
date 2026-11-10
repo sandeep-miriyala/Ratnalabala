@@ -9,7 +9,7 @@ import {
   Stack,
   Typography,
   Paper,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { SendRounded as SendRoundedIcon } from "@/lib/yuktai-icons";
 
 interface StreamingChatProps {

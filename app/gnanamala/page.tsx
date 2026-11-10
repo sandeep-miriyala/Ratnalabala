@@ -14,7 +14,7 @@
 
 import React, { startTransition, useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import NextLink from "next/link";
-import { Box, Button, Chip, CircularProgress, Stack, Typography } from "@mui/material";
+import { Box, Button, Chip, CircularProgress, Stack, Typography } from "@yuktishaalaa/yuktai/ui";
 import { OpenInNewRounded as OpenInNewRoundedIcon } from "@/lib/yuktai-icons";
 import { VolumeUpRounded as VolumeUpRoundedIcon } from "@/lib/yuktai-icons";
 

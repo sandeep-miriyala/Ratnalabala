@@ -17,7 +17,7 @@ import {
   Slider,
   Tooltip,
   Link,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { Bolt as BoltIcon } from "@/lib/yuktai-icons";
 import { RestartAlt as RestartAltIcon } from "@/lib/yuktai-icons";
 import { SmartToy as SmartToyIcon } from "../../lib/yuktai-icons";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Box, Chip, Stack, Typography, alpha, useTheme } from "@mui/material";
+import { Box, Chip, Stack, Typography, alpha, useTheme } from "@yuktishaalaa/yuktai/ui";
 import { SmartToyRounded as SmartToyRoundedIcon } from "../../lib/yuktai-icons";
 import { HubRounded as HubRoundedIcon } from "../../lib/yuktai-icons";
 import { YuktaiGrid, type GridColumn, type WebMCPStatus } from "@yuktishaalaa/yuktai";

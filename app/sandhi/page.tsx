@@ -5,7 +5,7 @@ import {
   Box, Typography, Card, CardContent, Chip,
   TextField, InputAdornment, Collapse, Divider,
   Stack, Button, alpha, Tab, Tabs,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { SearchRounded as SearchRoundedIcon } from "@/lib/yuktai-icons";
 import { ExpandMoreRounded as ExpandMoreRoundedIcon } from "@/lib/yuktai-icons";
 import { ExpandLessRounded as ExpandLessRoundedIcon } from "@/lib/yuktai-icons";

@@ -20,7 +20,7 @@ import {
   Tooltip,
   Typography,
   useMediaQuery,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { UndoRounded as UndoRoundedIcon } from "@/lib/yuktai-icons";
 import { RedoRounded as RedoRoundedIcon } from "../../lib/yuktai-icons";
 import { NoteAddRounded as NoteAddRoundedIcon } from "@/lib/yuktai-icons";

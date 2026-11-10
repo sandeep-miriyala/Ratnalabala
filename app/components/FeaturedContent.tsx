@@ -2,7 +2,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Paper, Typography, Chip, Stack, Skeleton, Fade } from "@mui/material";
+import { Paper, Typography, Chip, Stack, Skeleton, Fade } from "@yuktishaalaa/yuktai/ui";
 import { AutoAwesomeRounded as AutoAwesomeRoundedIcon } from "@/lib/yuktai-icons";
 
 interface FeaturedContentData {

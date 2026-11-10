@@ -8,7 +8,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Button, Chip, Collapse } from "@mui/material";
+import { Button, Chip, Collapse } from "@yuktishaalaa/yuktai/ui";
 import { ArrowForwardRounded as ArrowForwardRoundedIcon } from "@/lib/yuktai-icons";
 import { ExpandMoreRounded as ExpandMoreRoundedIcon } from "@/lib/yuktai-icons";
 import { ExpandLessRounded as ExpandLessRoundedIcon } from "@/lib/yuktai-icons";

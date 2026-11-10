@@ -11,7 +11,7 @@ import {
   TextField,
   Typography,
   Collapse,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 
 import { Mic as MicIcon } from "@/lib/yuktai-icons";
 import { VolumeUp as VolumeUpIcon } from "@/lib/yuktai-icons";
@@ -23,7 +23,7 @@ import { AutoAwesomeRounded as AutoAwesomeRoundedIcon } from "@/lib/yuktai-icons
 import { ExpandLessRounded as ExpandLessRoundedIcon } from "@/lib/yuktai-icons";
 import { ExpandMoreRounded as ExpandMoreRoundedIcon } from "@/lib/yuktai-icons";
 
-import { alpha, useTheme } from "@mui/material";
+import { alpha, useTheme } from "@yuktishaalaa/yuktai/ui";
 import { toPng } from "html-to-image";
 
 import TeluguVoice from "@/app/components/TeluguVoice";

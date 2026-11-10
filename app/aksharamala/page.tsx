@@ -8,8 +8,8 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
-} from "@mui/material";
-// ఒకే icon library — @mui/icons-material
+} from "@yuktishaalaa/yuktai/ui";
+// ఒకే icon library — YuktAI icons (lib/yuktai-icons)
 import { ExpandMore as ExpandMoreIcon } from "@/lib/yuktai-icons";
 import { VolumeUp as VolumeUpIcon } from "@/lib/yuktai-icons";
 import { Edit as EditIcon } from "@/lib/yuktai-icons";

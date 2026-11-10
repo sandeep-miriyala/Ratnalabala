@@ -4,15 +4,15 @@
    రత్నాలబాల – జ్ఞానమాల — ముఖ పేజీ
 
    • Inline styles లేవు — రూపం అంతా globals.css లోని rb-* classes (§11, §12)
-   • Icons: @mui/icons-material మాత్రమే
+   • Icons: YuktAI icons మాత్రమే (lib/yuktai-icons)
    • మాలల జాబితా: lib/malas.ts (Navbar కూడా అదే) — 3 గుంపులు, 23 మాలలు
    ═══════════════════════════════════════════════════════════════ */
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Button, CircularProgress, Collapse, Tab, Tabs } from "@mui/material";
+import { Button, CircularProgress, Collapse, Tab, Tabs } from "@yuktishaalaa/yuktai/ui";
 import type { GridColumn } from "@yuktishaalaa/yuktai";
-import type { SvgIconComponent } from "@mui/icons-material";
+import type { SvgIconComponent } from "@yuktishaalaa/yuktai/ui";
 import { ArrowForwardRounded as ArrowForwardRoundedIcon } from "@/lib/yuktai-icons";
 import { AutorenewRounded as AutorenewRoundedIcon } from "@/lib/yuktai-icons";
 import { ExpandMoreRounded as ExpandMoreRoundedIcon } from "@/lib/yuktai-icons";

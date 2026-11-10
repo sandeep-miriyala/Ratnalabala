@@ -4,7 +4,7 @@ import React, { useState, useCallback, useRef } from "react";
 import {
   Box, Typography, Card, CardContent, Chip,
   Stack, Button, alpha, IconButton, Tooltip,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { AutoStoriesRounded as AutoStoriesRoundedIcon } from "@/lib/yuktai-icons";
 import { VolumeUpRounded as VolumeUpRoundedIcon } from "@/lib/yuktai-icons";
 import { StopRounded as StopRoundedIcon } from "@/lib/yuktai-icons";

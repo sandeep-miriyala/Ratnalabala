@@ -12,7 +12,7 @@
    ═══════════════════════════════════════════════════════════════ */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@yuktishaalaa/yuktai/ui";
 import { PlayArrowRounded as PlayArrowRounded } from "@/lib/yuktai-icons";
 import { PauseRounded as PauseRounded } from "@/lib/yuktai-icons";
 import { StopRounded as StopRounded } from "@/lib/yuktai-icons";

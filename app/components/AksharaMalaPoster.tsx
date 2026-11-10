@@ -3,7 +3,7 @@
 import React, { useRef, useState, useCallback, useEffect, useId } from "react";
 import {
   Box, Typography, Card, CardContent, Divider, IconButton, Button, Stack, Tooltip, CircularProgress, Chip,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { VolumeUp as VolumeUpIcon } from "@/lib/yuktai-icons";
 import { StopCircle as StopCircleIcon } from "@/lib/yuktai-icons";
 import { Edit as EditIcon } from "@/lib/yuktai-icons";

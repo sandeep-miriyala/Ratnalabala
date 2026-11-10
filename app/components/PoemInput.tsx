@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@yuktishaalaa/yuktai/ui";
 
 /* =========================
    📦 TYPES

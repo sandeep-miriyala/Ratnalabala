@@ -5,7 +5,7 @@ import {
   Box, Typography, Card, CardContent, Chip,
   TextField, InputAdornment, Stack, Button,
   alpha, Tabs, Tab, IconButton, Tooltip,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { SearchRounded as SearchRoundedIcon } from "@/lib/yuktai-icons";
 import { AutoStoriesRounded as AutoStoriesRoundedIcon } from "@/lib/yuktai-icons";
 import { VolumeUpRounded as VolumeUpRoundedIcon } from "@/lib/yuktai-icons";

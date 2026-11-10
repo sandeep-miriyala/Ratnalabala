@@ -11,7 +11,7 @@ import {
   DialogTitle,
   LinearProgress,
   Typography,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { DownloadForOfflineRounded as DownloadForOfflineRoundedIcon } from "@/lib/yuktai-icons";
 
 import PoemCard from "@/app/components/PoemCard";

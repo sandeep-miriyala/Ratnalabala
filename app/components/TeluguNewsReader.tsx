@@ -19,7 +19,7 @@ import {
   Stack,
   TextField,
   Typography,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { PlayArrowRounded as PlayArrowRoundedIcon } from "@/lib/yuktai-icons";
 import { PauseRounded as PauseRoundedIcon } from "@/lib/yuktai-icons";
 import { DownloadRounded as DownloadRoundedIcon } from "@/lib/yuktai-icons";

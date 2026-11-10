@@ -15,7 +15,7 @@ import {
   CircularProgress,
   alpha,
   useTheme,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 
 import { HeadphonesRounded as HeadphonesRoundedIcon } from "@/lib/yuktai-icons";
 import { DownloadRounded as DownloadRoundedIcon } from "@/lib/yuktai-icons";

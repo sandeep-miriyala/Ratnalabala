@@ -1,7 +1,7 @@
 "use client"; // This component runs on the client side
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography, Button } from "@yuktishaalaa/yuktai/ui";
 
 export default function MusicPlayer() {
   const audioRef = useRef<HTMLAudioElement>(null);

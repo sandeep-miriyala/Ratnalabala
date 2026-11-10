@@ -3,7 +3,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { TextField, IconButton, Stack, Typography, Paper, CircularProgress } from "@mui/material";
+import { TextField, IconButton, Stack, Typography, Paper, CircularProgress } from "@yuktishaalaa/yuktai/ui";
 import { SendRounded as SendRoundedIcon } from "@/lib/yuktai-icons";
 
 interface ChatTurn {

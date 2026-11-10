@@ -17,7 +17,7 @@ import {
   ToggleButton,
   ToggleButtonGroup,
   Typography,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { MusicNoteRounded as MusicNoteRoundedIcon } from "@/lib/yuktai-icons";
 import { DeleteOutlineRounded as DeleteOutlineRoundedIcon } from "../../../lib/yuktai-icons";
 import { layoutProject, renderPage } from "./engine";

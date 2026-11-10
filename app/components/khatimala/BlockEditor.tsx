@@ -22,7 +22,7 @@ import {
   ToggleButtonGroup,
   Tooltip,
   Typography,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { FormatBoldRounded as FormatBoldRoundedIcon } from "../../../lib/yuktai-icons";
 import { FormatItalicRounded as FormatItalicRoundedIcon } from "../../../lib/yuktai-icons";
 import { FormatUnderlinedRounded as FormatUnderlinedRoundedIcon } from "../../../lib/yuktai-icons";

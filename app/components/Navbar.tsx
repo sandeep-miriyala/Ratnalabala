@@ -12,7 +12,7 @@
    • Cache Components: usePathname() <Suspense> లో
    ═══════════════════════════════════════════════════════════════ */
 
-import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Divider, Menu, MenuItem, Button, ListItemButton, Tooltip, InputBase } from "@mui/material";
+import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Divider, Menu, MenuItem, Button, ListItemButton, Tooltip, InputBase } from "@yuktishaalaa/yuktai/ui";
 import { Menu as MenuIcon } from "@/lib/yuktai-icons";
 import { CloseRounded as CloseRoundedIcon } from "@/lib/yuktai-icons";
 import { SearchRounded as SearchRoundedIcon } from "@/lib/yuktai-icons";

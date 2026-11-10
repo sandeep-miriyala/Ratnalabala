@@ -37,7 +37,7 @@ import {
   ButtonGroup,
   TextField,
   Popover,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { Undo as UndoIcon } from "@/lib/yuktai-icons";
 import { Redo as RedoIcon } from "../../lib/yuktai-icons";
 import { Download as DownloadIcon } from "@/lib/yuktai-icons";

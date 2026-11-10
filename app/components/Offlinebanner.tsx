@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@yuktishaalaa/yuktai/ui";
 import { WifiOffRounded as WifiOffRoundedIcon } from "../../lib/yuktai-icons";
 import { useOffline } from "next/offline";
 import { CheckIcon, CloseIcon } from "@yuktishaalaa/yuktai";

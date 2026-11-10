@@ -15,7 +15,7 @@ import {
   TextField,
   Typography,
   alpha,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { Close as CloseIcon } from "@/lib/yuktai-icons";
 import { SendRounded as SendRoundedIcon } from "@/lib/yuktai-icons";
 

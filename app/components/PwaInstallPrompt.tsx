@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Typography, Paper, Fab, IconButton, Snackbar, Alert } from '@mui/material';
+import { Typography, Paper, Fab, IconButton, Snackbar, Alert } from "@yuktishaalaa/yuktai/ui";
 import { InstallMobile as InstallMobileIcon } from "@/lib/yuktai-icons";
 import { CloseRounded as CloseRoundedIcon } from "@/lib/yuktai-icons";
 import { fabSx, FAB_EDGE, FAB_GAP, FAB_HEIGHT } from '@/lib/floating';

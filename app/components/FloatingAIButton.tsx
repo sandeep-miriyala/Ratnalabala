@@ -8,7 +8,7 @@ import {
   Typography,
   useTheme,
   useMediaQuery,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { SmartToy as SmartToyIcon } from "../../lib/yuktai-icons";
 import ChatbotWindow from "./ChatbotWindow";
 

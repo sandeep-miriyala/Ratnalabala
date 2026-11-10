@@ -10,7 +10,7 @@
    ═══════════════════════════════════════════════════════════════ */
 
 import { useEffect, useState } from "react";
-import { Box, Fab, Zoom } from "@mui/material";
+import { Box, Fab, Zoom } from "@yuktishaalaa/yuktai/ui";
 import { KeyboardArrowUpRounded as KeyboardArrowUpRoundedIcon } from "@/lib/yuktai-icons";
 import { fabSx } from "@/lib/floating";
 

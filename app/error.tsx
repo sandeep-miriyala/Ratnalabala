@@ -14,7 +14,7 @@
 // throw, broken component logic, null reference errors, etc.
 
 import { useEffect } from "react";
-import { Box, Typography, Button, Stack } from "@mui/material";
+import { Box, Typography, Button, Stack } from "@yuktishaalaa/yuktai/ui";
 import { ErrorOutline as ErrorOutlineIcon } from "@/lib/yuktai-icons";
 import { Home as HomeIcon } from "@/lib/yuktai-icons";
 import { Refresh as RefreshIcon } from "@/lib/yuktai-icons";

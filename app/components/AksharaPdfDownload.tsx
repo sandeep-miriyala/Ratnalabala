@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@mui/material";
+import { Button } from "@yuktishaalaa/yuktai/ui";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 

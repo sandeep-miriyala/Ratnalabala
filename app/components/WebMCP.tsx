@@ -14,7 +14,7 @@ import {
   Typography,
   alpha,
   useTheme,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 
 import { HubRounded as HubRoundedIcon } from "../../lib/yuktai-icons";
 import { SmartToyRounded as SmartToyRoundedIcon } from "../../lib/yuktai-icons";

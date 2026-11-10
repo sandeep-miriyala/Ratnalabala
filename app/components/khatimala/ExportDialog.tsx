@@ -24,7 +24,7 @@ import {
   ToggleButtonGroup,
   Typography,
   useMediaQuery,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { CloseRounded as CloseRoundedIcon } from "@/lib/yuktai-icons";
 import { PictureAsPdfRounded as PictureAsPdfRoundedIcon } from "@/lib/yuktai-icons";
 import { ImageRounded as ImageRoundedIcon } from "@/lib/yuktai-icons";

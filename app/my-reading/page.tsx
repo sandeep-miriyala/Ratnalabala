@@ -17,12 +17,12 @@ import {
   ToggleButton,
   ToggleButtonGroup,
   Typography,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { FavoriteRounded as FavoriteRoundedIcon } from "../../lib/yuktai-icons";
 import { FavoriteBorderRounded as FavoriteBorderRoundedIcon } from "../../lib/yuktai-icons";
 import { AutoAwesomeRounded as AutoAwesomeRoundedIcon } from "@/lib/yuktai-icons";
 import { MenuBookRounded as MenuBookRoundedIcon } from "@/lib/yuktai-icons";
-import { alpha, useTheme } from "@mui/material/styles";
+import { alpha, useTheme } from "@yuktishaalaa/yuktai/ui";
 import {
   getReadingRecords,
   setEntryFavorite,

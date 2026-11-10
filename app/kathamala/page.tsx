@@ -11,7 +11,7 @@ import {
   Stack,
   Chip,
   Divider,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import storiesData from "@/data/kids_stories_te.json";
 import StoryListByAge from "@/app/components/StoryListByAge";
 import { AGE_GROUPS,DEFAULT_AGE_KEY,AgeKey} from "@/app/types/kathamala";

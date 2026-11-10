@@ -8,7 +8,7 @@ import {
   Button,
   Pagination,
   Stack
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 
 import { Clear as ClearIcon } from "@/lib/yuktai-icons";
 

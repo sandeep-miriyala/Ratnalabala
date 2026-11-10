@@ -9,11 +9,11 @@
      🎬 వీడియోలు    — public/video, ఇక్కడే ప్లే
 
    • ట్యాబ్ లింక్: /shailimala#apk, #music, #videos …
-   • Inline styles లేవు — globals.css §11, §13. Icons: @mui/icons-material మాత్రమే
+   • Inline styles లేవు — globals.css §11, §13. Icons: YuktAI icons మాత్రమే (lib/yuktai-icons)
    ═══════════════════════════════════════════════════════════════ */
 
 import { useEffect, useRef, useState } from "react";
-import { Accordion, AccordionDetails, AccordionSummary, Button, Tab, Tabs } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Button, Tab, Tabs } from "@yuktishaalaa/yuktai/ui";
 import { ExpandMoreRounded as ExpandMoreRoundedIcon } from "@/lib/yuktai-icons";
 import { DownloadRounded as DownloadRoundedIcon } from "@/lib/yuktai-icons";
 import { MenuBookRounded as MenuBookRoundedIcon } from "@/lib/yuktai-icons";

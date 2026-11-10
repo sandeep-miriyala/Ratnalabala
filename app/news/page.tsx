@@ -1,6 +1,6 @@
 "use client";
 
-import { Container, Typography } from "@mui/material";
+import { Container, Typography } from "@yuktishaalaa/yuktai/ui";
 import TeluguNewsReader from "@/app/components/TeluguNewsReader";
 
 export default function NewsReaderPage() {

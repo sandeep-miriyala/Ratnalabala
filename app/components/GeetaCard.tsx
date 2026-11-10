@@ -18,7 +18,7 @@ import {
   Chip,
   alpha,
   useTheme,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { VolumeUpRounded as VolumeUpRoundedIcon } from "@/lib/yuktai-icons";
 
 import { AutoAwesomeRounded as AutoAwesomeRoundedIcon } from "@/lib/yuktai-icons";

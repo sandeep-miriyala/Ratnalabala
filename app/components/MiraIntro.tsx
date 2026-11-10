@@ -7,7 +7,7 @@
    ═══════════════════════════════════════════════════════════════ */
 
 import Link from "next/link";
-import { Button, Chip } from "@mui/material";
+import { Button, Chip } from "@yuktishaalaa/yuktai/ui";
 import { ArrowForwardRounded as ArrowForwardRoundedIcon } from "@/lib/yuktai-icons";
 
 export default function MiraIntro() {

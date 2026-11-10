@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { Box, Button, LinearProgress, Typography } from "@mui/material";
+import { Box, Button, LinearProgress, Typography } from "@yuktishaalaa/yuktai/ui";
 import { DownloadForOfflineRounded as DownloadForOfflineRoundedIcon } from "@/lib/yuktai-icons";
 
 import SametaPosterCard from "@/app/components/SametaCard";

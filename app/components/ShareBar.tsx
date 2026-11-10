@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useCallback } from "react";
-import { IconButton, Stack, Tooltip } from "@mui/material";
+import { IconButton, Stack, Tooltip } from "@yuktishaalaa/yuktai/ui";
 import { WhatsApp as WhatsAppIcon } from "../../lib/yuktai-icons";
 import { Download as DownloadIcon } from "@/lib/yuktai-icons";
 import { capturePosterAsDataUrl } from "@/lib/posterExport";

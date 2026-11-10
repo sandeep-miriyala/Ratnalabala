@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Box, Typography, Stack, Button } from "@mui/material";
+import { Box, Typography, Stack, Button } from "@yuktishaalaa/yuktai/ui";
 import { DownloadRounded as DownloadRoundedIcon } from "@/lib/yuktai-icons";
 import { MusicNoteRounded as MusicNoteRoundedIcon } from "@/lib/yuktai-icons";
 import { AndroidRounded as AndroidRoundedIcon } from "../../lib/yuktai-icons";

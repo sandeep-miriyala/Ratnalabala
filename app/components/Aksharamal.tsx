@@ -27,7 +27,7 @@ import {
   alpha,
   useMediaQuery,
   useTheme,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { CodeRounded as CodeRoundedIcon } from "../../lib/yuktai-icons";
 import { TimerOutlined as TimerOutlinedIcon } from "@/lib/yuktai-icons";
 import { CloudOutlined as CloudOutlinedIcon } from "../../lib/yuktai-icons";

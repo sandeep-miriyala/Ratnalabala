@@ -16,7 +16,7 @@ import {
   ToggleButton,
   ToggleButtonGroup,
   Typography,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { PictureAsPdfRounded as PictureAsPdfRoundedIcon } from "@/lib/yuktai-icons";
 import { ImageRounded as ImageRoundedIcon } from "@/lib/yuktai-icons";
 import { DescriptionRounded as DescriptionRoundedIcon } from "@/lib/yuktai-icons";

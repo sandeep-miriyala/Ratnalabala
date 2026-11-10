@@ -1,57 +1,35 @@
-// YuktAI settings for this app: one place for the name, colours and features.
-// Change something here and the header, widget, manifest and pages follow.
+// YuktAI settings for Ratnalabala: one place for the YuktAI framework layer.
+// Pages, API routes, the Python API (api/main.py), Postgres, Groq and TTS are unchanged;
+// this file only decides how YuktAI wraps them (widget, tools, voice, engine, Ask page).
+//
+// Hosting: Vercel, full stack. `yuktai build` runs Next.js in server mode (no static export),
+// so /api routes and the Python function keep working. See vercel.json.
 const config = {
   name: "ratnalabala",
   title: "రత్నాలబాల",
-  description: "రత్నాలబాల వ్యాకరణమాల: అక్షరాలు, గుణింతాలు, పదాలు, సామెతలు, సంధులు, సమాసాలు. చదవండి, వినండి, రాసి చూడండి.",
+  description: "తెలుగు సాహిత్యానికి ఒక ఇల్లు: చదవండి, వినండి, నేర్చుకోండి, సృష్టించండి.",
+  url: "https://ratnalabala.vercel.app",
 
-  theme: {
-    accent: "orange", // blue | violet | teal | orange (colours in src/styles/tokens.css)
-    color: "#9a3412", // browser bar and installed-app colour
-    picker: true, // 🎨 lets visitors pick a colour; contrast is kept at 7:1 or more
-    localFonts: true, // visitors can use fonts installed on their computer (desktop Chrome and Edge)
-  },
+  // Hosting model, for readers of this file: "vercel-fullstack" = Next.js server + Python functions
+  host: "vercel-fullstack" as const,
 
   features: {
-    accessibility: true, // ♿ button: contrast, text size, dyslexia font, reduced motion…
-    ask: true, // "Ask this page" panel, Ctrl + K. Answers come from the page itself.
-    pwa: true, // Install button (always shown until installed), works offline
-    backToTop: true, // ↑ Back to top button, bottom right
-    splash: true, // loading screen: logo and "Welcome" in 7 languages, once per tab
-    preferences: true, // 🌐 button: site language (English + 6 Indian languages) and animations (Device setting / Off / Calm / Lively)
-    pageTools: true, // QA report page and the 🛠 button: 15 WCAG checks, copilot, form review
-    grid: true, // YuktaiGrid on every grammar page: search, sort, Grid AI Assistant
-    backend: false, // Python API (FastAPI) in backend/: starts with npm run dev
-    icons: false, // icons guide: every YuktAI icon, copy the code
+    accessibility: true, // ♿ widget: contrast, text size, dyslexia font, reduced motion
+    agent: true, // 🤖 YuktAI agent panel
+    pageTools: true, // 🛠 QA report: WCAG checks, form and design review
+    launcher: true, // one YuktAI button that opens the tools
+    ask: false, // "Ask this page" panel (Ctrl + K). Off, as it was before the move to YuktAI.
+    webmcp: true, // browser AI agents can use the "searchBhavalamala" tool (lib/webmcp.ts)
   },
 
-  // Data grid: the Grid AI Assistant, voice and browser-agent tools
-  grid: {
-    assistant: true, // "Ask or type a command": search, sort, filter, summary, unusual values
-    voice: true, // 🎤 talk to the grid
-    language: "te-IN", // assistant and voice language: en-IN or any of the 22 Indian languages (te-IN, hi-IN, ta-IN…)
-    webmcp: true, // let browser AI agents use 11 grid tools (Chrome with WebMCP on)
+  // The YuktAI tools sit in the corner opposite the సహాయం button (RootClientLayout)
+  voiceLang: "te-IN", // voice commands and the grid assistant speak Telugu
+  engine: "rust" as "rust" | "ts", // Rust → WebAssembly search, TypeScript fallback
+
+  ask: {
+    title: "ఈ పేజీని అడగండి",
+    questions: [{ text: "ఈ పేజీ సారాంశం" }, { text: "ఈ పద్యం భావం ఏమిటి?", path: "/poems/*" }],
   },
-
-  // Loading screen (features.splash): shown once per browser tab. Skip, Esc or a click end it sooner.
-  splash: {
-    seconds: 4, // how long it stays: the bar fills and Skip counts down
-    tips: [
-      "అక్షరం మీద నొక్కితే వినిపిస్తుంది.",
-      "అక్షరమాలలో అక్షరాన్ని రాసి చూడండి: Rust సరిచూస్తుంది.",
-      "Ctrl + K: ఈ పేజీని ఏదైనా అడగండి.",
-      "♿ బటన్: పెద్ద అక్షరాలు, కాంట్రాస్ట్, సులువుగా చదివే ఫాంట్.",
-      "యాప్‌గా పెట్టుకోండి: ఒకసారి తెరిచాక ఇంటర్నెట్ లేకపోయినా పనిచేస్తుంది.",
-    ],
-  },
-
-  // The Python API in backend/ (features.backend). Set NEXT_PUBLIC_API_URL when it is online.
-  api: { url: process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000" },
-
-  // "rust": Rust compiled to WebAssembly (falls back to TypeScript if it is not built)
-  engine: "rust" as "rust" | "ts",
-
-  widget: { position: "left" as "left" | "right" },
 };
 
 export default config;

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useMemo } from "react";
-import { Box, Typography, Stack } from "@mui/material";
+import { Box, Typography, Stack } from "@yuktishaalaa/yuktai/ui";
 
 import storiesData from "@/data/kids_stories_te.json";
 import StoryCard from "@/app/components/StoryCard";

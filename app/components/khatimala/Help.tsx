@@ -12,7 +12,7 @@
    ═══════════════════════════════════════════════════════════════ */
 
 import { useState } from "react";
-import { Box, Button, Dialog, DialogContent, DialogTitle, IconButton, LinearProgress, Stack, Typography, useMediaQuery } from "@mui/material";
+import { Box, Button, Dialog, DialogContent, DialogTitle, IconButton, LinearProgress, Stack, Typography, useMediaQuery } from "@yuktishaalaa/yuktai/ui";
 import { CloseRounded as CloseRoundedIcon } from "@/lib/yuktai-icons";
 
 /* ─────────────────────────────────────────────────────────────── */

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import {
   Box, Typography, Card, CardContent, Chip,
   TextField, Stack, Button, alpha, Collapse,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { detectSamasa, DetectResult } from "./samasaDetector";
 
 const SAMASA_COLORS = [

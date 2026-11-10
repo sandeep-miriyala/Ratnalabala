@@ -7,8 +7,8 @@
 // Each export keeps its Material name, so the rest of the code did not change.
 // ─────────────────────────────────────────────────────────────────────────────
 
-import SvgIcon, { type SvgIconProps } from "@mui/material/SvgIcon"
-import type { SvgIconComponent } from "@mui/icons-material"
+import { SvgIcon, type SvgIconProps } from "@yuktishaalaa/yuktai/ui"
+import type { SvgIconComponent } from "@yuktishaalaa/yuktai/ui"
 import { ICON_PATHS, type IconName } from "@yuktishaalaa/yuktai/icons"
 
 function yuktai(name: IconName, displayName: string): SvgIconComponent {

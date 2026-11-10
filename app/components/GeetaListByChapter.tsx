@@ -12,7 +12,7 @@ import {
   CircularProgress,
   IconButton,
   InputAdornment,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { ClearRounded as ClearRoundedIcon } from "@/lib/yuktai-icons";
 import { ExpandMoreRounded as ExpandMoreRoundedIcon } from "@/lib/yuktai-icons";
 import { ExpandLessRounded as ExpandLessRoundedIcon } from "@/lib/yuktai-icons";

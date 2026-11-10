@@ -9,7 +9,7 @@
    ═══════════════════════════════════════════════════════════════ */
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Box, IconButton, Stack, Tooltip, Typography } from "@mui/material";
+import { Box, IconButton, Stack, Tooltip, Typography } from "@yuktishaalaa/yuktai/ui";
 import { CloseRounded as CloseRoundedIcon } from "@/lib/yuktai-icons";
 import { NavigateBeforeRounded as NavigateBeforeRoundedIcon } from "@/lib/yuktai-icons";
 import { NavigateNextRounded as NavigateNextRoundedIcon } from "@/lib/yuktai-icons";

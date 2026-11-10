@@ -26,7 +26,7 @@ import {
   Typography,
   alpha,
   useTheme,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { ContrastRounded as ContrastRoundedIcon } from "@/lib/yuktai-icons";
 import { PictureAsPdfRounded as PictureAsPdfRoundedIcon } from "@/lib/yuktai-icons";
 import { GridOnRounded as GridOnRoundedIcon } from "@/lib/yuktai-icons";

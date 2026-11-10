@@ -13,7 +13,7 @@ import {
   Typography,
   useMediaQuery,
   useTheme,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { CloseRounded as CloseRoundedIcon } from "@/lib/yuktai-icons";
 import { MicRounded as MicRoundedIcon } from "@/lib/yuktai-icons";
 import { StopRounded as StopRoundedIcon } from "@/lib/yuktai-icons";

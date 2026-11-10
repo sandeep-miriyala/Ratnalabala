@@ -8,7 +8,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Box, Typography, Collapse, Button } from "@mui/material";
+import { Box, Typography, Collapse, Button } from "@yuktishaalaa/yuktai/ui";
 import { ExpandMoreRounded as ExpandMoreRoundedIcon } from "@/lib/yuktai-icons";
 import { ExpandLessRounded as ExpandLessRoundedIcon } from "@/lib/yuktai-icons";
 import { MenuBookRounded as MenuBookRoundedIcon } from "@/lib/yuktai-icons";

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useEffect, useState, useCallback } from "react";
-import { Box, IconButton, Typography, CircularProgress, Stack, Button } from "@mui/material";
+import { Box, IconButton, Typography, CircularProgress, Stack, Button } from "@yuktishaalaa/yuktai/ui";
 import { Delete as DeleteIcon } from "../../lib/yuktai-icons";
 import { CheckCircle as CheckCircleIcon } from "@/lib/yuktai-icons";
 import { Cancel as CancelIcon } from "@/lib/yuktai-icons";

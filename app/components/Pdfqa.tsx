@@ -28,7 +28,7 @@ import {
   Stack,
   TextField,
   Typography,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { PictureAsPdfRounded as PictureAsPdfRoundedIcon } from "@/lib/yuktai-icons";
 import { SendRounded as SendRoundedIcon } from "@/lib/yuktai-icons";
 import { DeleteOutlineRounded as DeleteOutlineRoundedIcon } from "../../lib/yuktai-icons";

@@ -14,7 +14,7 @@ import {
   Collapse,
   Grid,
   Paper,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { ArchitectureRounded as ArchitectureRoundedIcon } from "../../lib/yuktai-icons";
 import { ExpandMoreRounded as ExpandMoreRoundedIcon } from "@/lib/yuktai-icons";
 import { ExpandLessRounded as ExpandLessRoundedIcon } from "@/lib/yuktai-icons";

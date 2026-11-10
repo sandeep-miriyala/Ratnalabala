@@ -8,7 +8,7 @@ import {
   Chip,
   Box,
   Button,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 
 import type {
   TeluguLetter,

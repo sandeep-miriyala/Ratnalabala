@@ -1,5 +1,6 @@
 import "./globals.css";
 import RootClientLayout from "./RootClientLayout";
+import YuktaiStyleRegistry from "@/app/components/YuktaiStyleRegistry";
 // Must match the real file name exactly (Vercel builds on Linux = case-sensitive)
 import OfflineBanner from "@/app/components/Offlinebanner";
 import { Analytics } from "@vercel/analytics/next";
@@ -102,12 +103,15 @@ export default function RootLayout({
       <body>
         {/* Navbar, page content, WebMCP registration, the సహాయం button and
             the yuktai tools (always in the opposite corner) — all in RootClientLayout */}
-        <PoemAI>
-          <RootClientLayout>{children}</RootClientLayout>
-        </PoemAI>
+        {/* YuktAI UI: component styles go out with the server HTML */}
+        <YuktaiStyleRegistry>
+          <PoemAI>
+            <RootClientLayout>{children}</RootClientLayout>
+          </PoemAI>
 
-        {/* One offline banner for every page */}
-        <OfflineBanner />
+          {/* One offline banner for every page */}
+          <OfflineBanner />
+        </YuktaiStyleRegistry>
 
         <Analytics />
         <SpeedInsights />

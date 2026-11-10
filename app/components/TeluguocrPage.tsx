@@ -18,7 +18,7 @@ import {
   AccordionDetails,
   Divider,
   Chip,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { ExpandMore as ExpandMoreIcon } from "@/lib/yuktai-icons";
 
 import { FileUploadComponent } from "./FileUploadComponent";

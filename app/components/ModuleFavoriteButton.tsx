@@ -11,7 +11,7 @@
    ═══════════════════════════════════════════════════════════════ */
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Box, IconButton, Snackbar, Tooltip } from "@mui/material";
+import { Box, IconButton, Snackbar, Tooltip } from "@yuktishaalaa/yuktai/ui";
 import { FavoriteRounded as FavoriteRoundedIcon } from "../../lib/yuktai-icons";
 import { FavoriteBorderRounded as FavoriteBorderRoundedIcon } from "../../lib/yuktai-icons";
 import Link from "next/link";

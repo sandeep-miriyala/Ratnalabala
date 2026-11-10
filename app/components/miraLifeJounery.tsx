@@ -14,7 +14,7 @@ import {
   Button,
   useTheme,
   useMediaQuery,
-} from "@mui/material";
+} from "@yuktishaalaa/yuktai/ui";
 import { CalendarIcon as Calendar, PersonIcon as User, HomeIcon as Home, BookIcon as Book, TrophyIcon as Award, PinIcon as MapPin, FileIcon as FileText } from "@yuktishaalaa/yuktai/icons";
 
 const personalDetails = [

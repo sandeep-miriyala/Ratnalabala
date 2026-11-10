@@ -2,7 +2,7 @@
 
 import * as Mp4Muxer from "mp4-muxer";
 import { useState, useRef, useEffect, useCallback } from "react";
-import { useTheme, useMediaQuery } from "@mui/material";
+import { useTheme, useMediaQuery } from "@yuktishaalaa/yuktai/ui";
 
 /* ── telugu font ─────────────────────────────────────────────── */
 const TELUGU_FONT = "'Noto Serif Telugu','Noto Serif',Georgia,serif";
