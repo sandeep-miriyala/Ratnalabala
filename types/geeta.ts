@@ -1,4 +1,4 @@
-﻿export interface GeetaChapterMeta {
+export interface GeetaChapterMeta {
   key: number;
   label: string;
   totalVerses: number;

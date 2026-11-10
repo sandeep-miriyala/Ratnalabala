@@ -1,4 +1,4 @@
-﻿import { groq } from "@ai-sdk/groq";
+import { groq } from "@ai-sdk/groq";
 import { defineAgent } from "eve";
 
 export default defineAgent({

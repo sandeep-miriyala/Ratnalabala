@@ -1,45 +1,43 @@
+# dependencies and build output
 node_modules/
 .next/
+out/
+build/
+app/build/
+rust/target/
+public/sw.js
+public/sw.js.map
+
+# local tools and caches
 .vercel/
 .eve/
-.env*
-!.env.example
+.gradle/
+.neon
 __pycache__/
 *.pyc
 .venv/
 venv/
 rag-env/
-.gradle/
-app/build/
-*.apk
-*.aab
-build/
-out/
-unused-report.txt
 
-.eve/
-.vercel/
-.gradle/
-*.apk
-*.aab
-
-
-.neon
-android.keystore
-.eve/
-.vercel/
-.gradle/
-*.apk
-*.aab
-
-
-public/sw.js
-public/sw.js.map
-
-public/sw.js
-public/sw.js.map
-.vercel
+# secrets (keep .env.example)
 .env*
+!.env.example
+android.keystore
+
+# Android build files (the signed APK in public/ is kept on purpose)
+*.apk
+*.aab
+!public/app-release-signed.apk
+
+# local reports and backups
+icons-report.csv
 icons-scan.csv
 icons-review.html
-icons-report.csv
+unused-report.txt
+*.before-*
+*.backup
+merge-backup-*/
+build-output-*.txt
+*-diagnostics.txt
+*-error-lines.txt
+*-check-output.txt

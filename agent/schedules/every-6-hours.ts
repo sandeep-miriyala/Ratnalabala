@@ -1,4 +1,4 @@
-﻿import { defineSchedule } from "eve/schedules";
+import { defineSchedule } from "eve/schedules";
 
 export default defineSchedule({
   cron: "0 0 * * *",

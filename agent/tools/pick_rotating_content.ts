@@ -1,4 +1,4 @@
-﻿import { defineTool } from "eve/tools";
+import { defineTool } from "eve/tools";
 import { kv } from "@vercel/kv";
 
 const BASE_URL = "https://ratnalabala.vercel.app";

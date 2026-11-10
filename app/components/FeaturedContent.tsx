@@ -1,4 +1,4 @@
-﻿// AGENTS.md → see "FeaturedContent Component Rules"
+// AGENTS.md → see "FeaturedContent Component Rules"
 "use client";
 
 import { useState, useEffect, useRef } from "react";

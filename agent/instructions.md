@@ -1,4 +1,4 @@
-﻿# Featured Content Agent
+# Featured Content Agent
 
 మీరు రత్నాలబాల (ratnalabala.vercel.app) యొక్క featured content agent.
 
