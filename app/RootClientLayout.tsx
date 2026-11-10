@@ -134,7 +134,7 @@ export default function RootClientLayout({ children }: { children: React.ReactNo
   }, []);
 
   // yuktai tools always go to the corner opposite the సహాయం button
-  const yuktaiSide: Side = side === "right" ? "left" : "right";
+  const yuktaiSide: Side = yuktai.position === "auto" ? (side === "right" ? "left" : "right") : yuktai.position;
 
   return (
     <YuktAIWrapper
@@ -143,6 +143,10 @@ export default function RootClientLayout({ children }: { children: React.ReactNo
       showAccessibility={yuktai.features.accessibility}
       showAgent={yuktai.features.agent}
       showPageTools={yuktai.features.pageTools}
+      showRag={yuktai.features.rag}
+      showVibeCoder={yuktai.features.vibeCoder}
+      pageToolsTab={yuktai.pageToolsTab}
+      config={yuktai.a11y}
       voiceLang={yuktai.voiceLang}
       engine={yuktai.engine}
     >
@@ -303,7 +307,7 @@ export default function RootClientLayout({ children }: { children: React.ReactNo
       {/* Ask page panel: same corner as the yuktai tools, lifted above them.
           On or off in yuktai.config.ts (features.ask). */}
       {yuktai.features.ask && (
-        <AskPageClient side={yuktaiSide} bottom={96} title={yuktai.ask.title} questions={yuktai.ask.questions} />
+        <AskPageClient side={yuktaiSide} {...yuktai.ask} />
       )}
     </YuktAIWrapper>
   );
